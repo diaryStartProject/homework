@@ -22,3 +22,7 @@
   - 할 일의 개수가 많을 때 렌더링 속도 대응해보기
   - mobile (ios, android) 대응해보기
   - webpack `production`이랑 `development`모드로 나눠보기 
+
+#### 디자인 요구사항
+  - <img width="546" alt="스크린샷 2021-12-21 오후 3 14 15" src="https://user-images.githubusercontent.com/22065725/146880907-a103a256-edaa-4597-93ab-0e9a98173dd9.png">
+  - <img width="571" alt="스크린샷 2021-12-21 오후 3 14 23" src="https://user-images.githubusercontent.com/22065725/146880911-4638cc9a-5cbf-4131-8814-7257a3a1889e.png">
