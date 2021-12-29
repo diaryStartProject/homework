@@ -1,3 +1,7 @@
+body{
+    background-color: gainsboro;
+}
+
 .app-container{
     margin-left: auto;
     margin-right: auto;
@@ -5,3 +9,36 @@
     margin-top: 6rem;
 }
 
+.app-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: #00b3cac2;
+    color: white;
+}
+
+.app-content{
+    background-color: white;
+}
+
+.app-input-container{
+    display: flex;
+}
+
+.app-input{
+    border: none;
+    line-height: 1.5rem;
+    flex: 1;
+    font-size: 1.1rem;
+    background-color: #414141c2;
+    color: white;
+}
+.app-input::placeholder{
+    color: white;
+}
+.app-input-button{
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
