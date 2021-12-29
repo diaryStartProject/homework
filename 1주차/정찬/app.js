@@ -1,14 +1,10 @@
-localStorage.setItem("0","할일1");
-localStorage.setItem("1","할일2");
-localStorage.setItem("2","할일3");
-
-
 function render(){
-    console.log(localStorage);
     let list = "";
-    for (let i = 0; i < localStorage.length; i++) {
-        list += "<li> <div class='todo-item'> <input type='checkbox'> <div class='text'>" + localStorage.getItem(localStorage.key(i)) + "</div></div> <div class='app-delete-todo-button' id=" + localStorage.key(i) + ">" + "-" + "</div></li>";
-    }
+
+    Object.keys(localStorage).sort().forEach(key => {
+       list += "<li> <div class='todo-item'> <input type='checkbox'> <div class='text'>" + localStorage.getItem(key) + "</div></div> <div class='app-delete-todo-button' id=" + key + ">" + "-" + "</div></li>";
+
+    });
     document.querySelector(".app-todo-list").innerHTML = list;
 
     let appDeleteButtons = document.querySelectorAll(".app-delete-todo-button");
@@ -30,8 +26,8 @@ function addItem(){
     render();
 }
 
-async function deleteItem (){
-    await localStorage.removeItem(this.getAttribute('id'));
+function deleteItem (){
+    localStorage.removeItem(this.getAttribute('id'));
     render();
 }
 
