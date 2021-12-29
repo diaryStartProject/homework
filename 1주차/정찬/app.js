@@ -1,4 +1,4 @@
-const todoList = [
+let todoList = [
     {id:0, text:"할일 1"},
     {id:1, text:"할일 2"},
     {id:2, text:"할일 3"},
@@ -10,8 +10,12 @@ function render(){
         list += "<li> <div class='todo-item'> <input type='checkbox'> <div class='text'>" + todoList[i]['text'] + "</div></div> <div class='app-delete-todo-button' id=" + todoList[i].id + ">" + "-" + "</div></li>";
     }
     document.querySelector(".app-todo-list").innerHTML = list;
+
+    let appDeleteButtons = document.querySelectorAll(".app-delete-todo-button");
+    appDeleteButtons.forEach(appDeleteButton => {
+    appDeleteButton.addEventListener("click", deleteItem);
+    });
 }
-render();
 
 let appInputButton = document.querySelector(".app-input-button");
 appInputButton.addEventListener("click", addItem);
@@ -25,3 +29,11 @@ function addItem(){
     }
     render();
 }
+
+function deleteItem(){
+    todoList = todoList.filter( el => el["id"] != this.getAttribute('id'));
+    console.log(this.getAttribute('id'));
+    render();
+}
+
+render();
