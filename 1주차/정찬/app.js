@@ -1,13 +1,13 @@
-let todoList = [
-    {id:0, text:"할일 1"},
-    {id:1, text:"할일 2"},
-    {id:2, text:"할일 3"},
-];
+localStorage.setItem("0","할일1");
+localStorage.setItem("1","할일2");
+localStorage.setItem("2","할일3");
+
 
 function render(){
+    console.log(localStorage);
     let list = "";
-    for (let i = 0; i < todoList.length; i++) {
-        list += "<li> <div class='todo-item'> <input type='checkbox'> <div class='text'>" + todoList[i]['text'] + "</div></div> <div class='app-delete-todo-button' id=" + todoList[i].id + ">" + "-" + "</div></li>";
+    for (let i = 0; i < localStorage.length; i++) {
+        list += "<li> <div class='todo-item'> <input type='checkbox'> <div class='text'>" + localStorage.getItem(localStorage.key(i)) + "</div></div> <div class='app-delete-todo-button' id=" + localStorage.key(i) + ">" + "-" + "</div></li>";
     }
     document.querySelector(".app-todo-list").innerHTML = list;
 
@@ -23,16 +23,15 @@ appInputButton.addEventListener("click", addItem);
 function addItem(){
     let todoItem = document.querySelector(".app-input").value;
     if(todoItem != "" && todoItem != null){
-        todoList.push({id: todoList.length + 1, text:todoItem});
+        localStorage.setItem(localStorage.length++, todoItem);
         document.querySelector(".app-input").value = "";
         document.querySelector(".app-input").focus();
     }
     render();
 }
 
-function deleteItem(){
-    todoList = todoList.filter( el => el["id"] != this.getAttribute('id'));
-    console.log(this.getAttribute('id'));
+async function deleteItem (){
+    await localStorage.removeItem(this.getAttribute('id'));
     render();
 }
 
