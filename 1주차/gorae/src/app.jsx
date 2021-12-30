@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './components/header';
 import './app.css';
+import Header from './components/header';
+import TaskAddForm from './components/taskAddForm';
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
         <>
         <section className="toDoList">
             <Header></Header>
+            <TaskAddForm></TaskAddForm>
         </section>
         </>
     );
