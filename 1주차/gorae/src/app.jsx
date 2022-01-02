@@ -11,7 +11,13 @@ const App = () => {
     );
 
     const handleAdd = (item) => {
-        setTasks([...tasks, { id:Date.now(), item }]);
+        setTasks([...tasks, {id: Date.now(), item}]);
+    }
+
+    const handleDelete = (id) => {
+        const arr = JSON.parse(localStorage.getItem(`tasks`));
+        const updatedTasks = arr.filter((v)=>v.id !== id);
+        setTasks([...updatedTasks]);
     }
 
     useEffect(() => {
@@ -24,7 +30,9 @@ const App = () => {
             <Header></Header>
             <Tasks
             tasks={tasks}
-            onAdd={handleAdd}/>
+            onAdd={handleAdd}
+            onDelete={handleDelete}
+            />
         </section>
         </>
     );

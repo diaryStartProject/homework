@@ -50,6 +50,7 @@
   height: 3rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   box-sizing: border-box;
   border-bottom: 1px solid gainsboro;
@@ -60,4 +61,13 @@
 .task {
   padding-left: 1rem;
   color: black;
+}
+.delBtn {
+  border: none;
+  background-color: transparent;
+  color: red;
+}
+.plusBtn:hover,
+.delBtn:hover {
+  cursor: pointer;
 }
