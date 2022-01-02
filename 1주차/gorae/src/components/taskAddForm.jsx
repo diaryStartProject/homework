@@ -1,12 +1,13 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
-const TaskAddForm = () => {
+const TaskAddForm = ({onAdd}) => {
     const formRef = useRef();
     const inputRef = useRef();
     
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(inputRef.current.value);
+        const item = inputRef.current.value;
+        item && onAdd(item);
         formRef.current.reset();
     };
 
