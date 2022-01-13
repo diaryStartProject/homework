@@ -5,17 +5,22 @@ import Tasks from './components/tasks.jsx';
 
 const App = () => {
     const [tasks, setTasks] = useState(
-        localStorage.getItem(`tasks`) ?
-        JSON.parse(localStorage.getItem(`tasks`))
+        localStorage.getItem('tasks') ?
+        JSON.parse(localStorage.getItem('tasks'))
         : []
     );
 
     const handleAdd = (item) => {
         setTasks([...tasks, {id: Date.now(), item}]);
     }
+    const handleDelete = (id) => {
+        const arr = JSON.parse(localStorage.getItem('tasks'));
+        const updatedTasks = arr.filter((v)=>v.id !== id);
+        setTasks([...updatedTasks]);
+    }
 
     useEffect(() => {
-        localStorage.setItem(`tasks`, JSON.stringify(tasks));
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     },[tasks]);
 
     return (
@@ -25,6 +30,7 @@ const App = () => {
             <Tasks
             tasks={tasks}
             onAdd={handleAdd}
+            onDelete={handleDelete}
             />
         </section>
         </>

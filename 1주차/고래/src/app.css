@@ -40,8 +40,35 @@
 .plusBtn:hover {
   cursor: pointer;
 }
+
 .tasks {
   width: 100%;
   height: 17rem;
   overflow-y: scroll;
+}
+.li {
+  width: 100%;
+  list-style: none;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid gainsboro;
+}
+input[type='checkbox']:checked + label {
+  text-decoration: line-through;
+}
+.task {
+  padding-left: 1rem;
+  color: black;
+}
+.delBtn {
+  border: none;
+  background-color: transparent;
+  color: red;
+}
+.delBtn:hover {
+  cursor: pointer;
 }
