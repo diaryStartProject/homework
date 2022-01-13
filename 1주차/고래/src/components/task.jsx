@@ -1,8 +1,15 @@
 import React from "react";
 
-const Task = ({id, task, onDelete}) => {
+const Task = ({id, task, onDelete, onCheck, checkedList}) => {
+    let checked = checkedList.has(String(id)) ? true : false;
+
     const deleteItem = () => {
         onDelete(id);
+    }
+
+    const checkItem = ({target}) => {
+        checked = !checked;
+        onCheck(id, target.checked);
     }
     
     return (
@@ -13,6 +20,8 @@ const Task = ({id, task, onDelete}) => {
                 id="item" 
                 name="task" 
                 type="checkbox" 
+                onChange={checkItem}
+                checked={checked}
                 />
                 <label htmlFor="item" className="task">{task}</label>
             </div>
