@@ -1,0 +1,14 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env", {
+				"targets": {
+					"browsers": ["last 2 versions", ">= 0.25% in KR"]
+				}
+			}
+		]
+	],
+	"plugins": [
+    "@babel/plugin-transform-block-scoping"
+	]
+}
