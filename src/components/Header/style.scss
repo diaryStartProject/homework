@@ -1,0 +1,17 @@
+.todo_main_header {
+	width: 100%;
+	text-align: center;
+	background-color: #22B8CF;
+	padding: 10px 0;
+
+	.todo_header_title {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 28px;
+		padding: 0 10px;
+		color: #fff;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;	
+	}
+}
