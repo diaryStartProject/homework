@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Task = ({id, task, onDelete, onCheck, checkedList}) => {
     let checked = checkedList.has(String(id)) ? true : false;
@@ -26,7 +28,7 @@ const Task = ({id, task, onDelete, onCheck, checkedList}) => {
                 <label htmlFor="item" className="task">{task}</label>
             </div>
             <button className="delBtn" onClick={deleteItem}>
-                <i className="fas fa-minus-circle"></i>
+            <FontAwesomeIcon icon={faMinusCircle}/>
             </button>
         </li>
         </>
