@@ -1,5 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const webpack = require('webpack');
+
+const isAnalyze = process.argv.includes('--analyze');
+const prod = process.env.NODE_ENV || "production";
 
 module.exports = {
   entry: {
@@ -21,8 +26,10 @@ module.exports = {
 
   devServer: {
     port: 9000,
-    stats: 'errors-only'
+    stats: 'errors-only',
+    historyApiFallback: true,
   },
+  devtool: prod ? "cheap-source-map" : "eval-cheap-source-map",
 
   module: {
     rules: [
@@ -36,7 +43,7 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.svg$/,
+        test: /\.(jpg|png|gif|svg)$/,
         use: ['file-loader']
       }
     ]
@@ -45,6 +52,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    ...(isAnalyze ? [new BundleAnalyzerPlugin()] : []),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.BannerPlugin({
+      banner: '이것은 배너입니다.'
     })
   ]
 }
