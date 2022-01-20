@@ -1,17 +1,24 @@
 :root {
   --blue: #21b8cf;
+  --gray: #c4c4c4;
+  --black: #222222;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toDoList {
-  width: 70vw;
-  height: 25rem;
+  width: 80vw;
   max-width: 700px;
-  background-color: antiquewhite;
   color: white;
 }
 
 .header {
-  height: 5rem;
+  height: 60px;
   background-color: var(--blue);
   display: flex;
   justify-content: center;
@@ -19,52 +26,66 @@
 }
 
 .addForm {
-  height: 3rem;
+  height: 50px;
   display: flex;
 }
+
 .input {
-  flex: 9;
-  background-color: black;
+  flex: 1 1 auto;
+  font-size: 16px;
+  background-color: var(--black);
   color: white;
-  padding-left: 1rem;
+  border: none;
   box-sizing: border-box;
+  padding-left: 15px;
 }
+
 .input::placeholder {
   color: white;
 }
+
 .plusBtn {
-  flex: 1;
+  padding: 0 20px;
+  border: none;
+  background-color: var(--gray);
 }
+
 .plusBtn:hover {
   cursor: pointer;
 }
 
 .tasks {
-  height: 17rem;
+  height: 400px;
   overflow-y: scroll;
+  border: 1px solid var(--black);
 }
+
 .li {
   list-style: none;
-  height: 3rem;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 15px;
   box-sizing: border-box;
   border-bottom: 0.5px solid gainsboro;
 }
-input[type='checkbox']:checked + label {
+
+.task:checked + label {
   text-decoration: line-through;
 }
+
 .task {
-  padding-left: 1rem;
+  padding-left: 20px;
   color: black;
 }
+
 .delBtn {
   border: none;
   background-color: transparent;
   color: red;
 }
+
 .delBtn:hover {
   cursor: pointer;
 }

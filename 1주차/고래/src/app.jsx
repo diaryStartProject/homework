@@ -16,7 +16,7 @@ const App = () => {
     );
 
     const handleAdd = (item) => {
-        setTasks([...tasks, {id: Date.now(), item}]);
+        setTasks([...tasks, {id: Math.random() * 100000, item}]);
     }
     const handleDelete = (id) => {
         const arr = JSON.parse(localStorage.getItem('tasks'));
