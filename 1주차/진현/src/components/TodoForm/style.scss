@@ -1,0 +1,44 @@
+.todo_form_container {
+	display: flex;
+
+	.todo_container_input {
+		flex: 1 1 auto;
+
+		.todo_input_text {
+			display: block;
+			background-color: #222;
+			font-size: 20px;
+			line-height: 28px;
+			padding: 10px;
+			color: #fff;
+			outline: none;
+			width: 100%;
+	
+			&::placeholder {
+				color: #fff;
+			}
+		}
+	}
+
+
+
+	.todo_container_button {
+		&[aria-label="추가 버튼"] {
+			padding: 10px 20px;
+			cursor: pointer;
+			background-color: #c4c4c4;
+
+			&:hover {
+				background-color: #3b7cf5;
+			}
+
+			&:before {
+				display: inline-block;
+				content: '';
+				background: url('../../../public/images/icon_todo_form--add.svg') no-repeat;
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}

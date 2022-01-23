@@ -1,0 +1,81 @@
+.todo_main_list {
+  width: 100%;
+  border: 1px solid #000;
+  max-height: 500px;
+  overflow-y: auto;
+
+  .todo_main_item {
+    display: flex;
+    background-color: #fff;
+    padding: 20px 15px;
+
+    &:not(:first-child) {
+      border-top: 2px solid #e9e9e9;
+    }
+
+    .todo_main_wrap {
+      flex: 1 1 auto;
+      padding-top: 10px;
+    }
+
+    .todo_main_input {
+      &:not(:checked) {
+        &:before {
+          display: inline-block;
+          content: '';
+          background: url('../../../public/images/icon_todo_item--uncheck.svg') no-repeat;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &:checked {
+        &:before {
+          display: inline-block;
+          content: '';
+          background: url('../../../public/images/icon_todo_item--check.svg') no-repeat;
+          width: 18px;
+          height: 18px;
+        }
+
+        & + .todo_main_label {
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .todo_main_label {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 23px;
+      color: #000000;
+
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
+    }
+
+    .todo_main_button {
+      &:not(:first-child) {
+        margin-left: auto;
+      }
+
+      &[aria-label="삭제 버튼"] {
+        padding: 10px;
+
+        &:before {
+          display: inline-block;
+          content: '';
+          background: url('../../../public/images/icon_todo_item--delete.svg') no-repeat;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
