@@ -21,7 +21,7 @@ const Task = ({id, task, onDelete, onCheck, checkedList}) => {
                 <input 
                 id="item" 
                 name="task" 
-                className="task"
+                className="checkbox"
                 type="checkbox" 
                 onChange={checkItem}
                 checked={checked}

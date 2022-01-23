@@ -72,6 +72,12 @@ body {
   justify-content: space-between;
 }
 
+.li-task {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .task:checked + label {
   text-decoration: line-through;
 }
