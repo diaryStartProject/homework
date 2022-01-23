@@ -16,8 +16,8 @@ const TaskAddForm = ({onAdd}) => {
 
     return (
         <form ref={formRef} className="addForm" onSubmit={onSubmit}>
-            <input ref={inputRef} className="input" name="input" type="text" placeholder="할 일을 입력하세요"/>
-            <button className="plusBtn">
+            <input ref={inputRef} name="input" className="addInput" type="text" placeholder="할 일을 입력하세요"/>
+            <button className="addBtn">
             <FontAwesomeIcon icon={faPlusCircle}/>
             </button>
         </form>

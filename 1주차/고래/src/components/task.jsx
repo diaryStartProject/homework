@@ -16,17 +16,17 @@ const Task = ({id, task, onDelete, onCheck, checkedList}) => {
     
     return (
         <>
-        <li className="li">
-            <div className="li-task">
+        <li className="taskContainer">
+            <div className="task">
                 <input 
                 id="item" 
-                name="task" 
-                className="checkbox"
+                name="task"
+                className="checkBox"
                 type="checkbox" 
                 onChange={checkItem}
                 checked={checked}
                 />
-                <label htmlFor="item" className="task">{task}</label>
+                <label htmlFor="item" className="taskContent">{task}</label>
             </div>
             <button className="delBtn" onClick={deleteItem}>
             <FontAwesomeIcon icon={faMinusCircle}/>
