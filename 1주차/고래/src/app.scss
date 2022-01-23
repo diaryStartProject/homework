@@ -1,0 +1,92 @@
+$blue: #21b8cf;
+$gray: #c4c4c4;
+$black: #222222;
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toDoList {
+  width: 80vw;
+  max-width: 700px;
+  color: white;
+}
+
+.header {
+  height: 60px;
+  background-color: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+.addForm {
+  height: 50px;
+  display: flex;
+
+  .addInput {
+    font-size: 16px;
+    background-color: $black;
+    color: white;
+    padding-left: 15px;
+    flex: 1 1 auto;
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  .addBtn {
+    padding: 0 20px;
+    background-color: $gray;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.tasks {
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid $black;
+}
+
+.taskContainer {
+  height: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid gainsboro;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .task {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .checkBox:checked + label {
+      text-decoration: line-through;
+    }
+
+    .taskContent {
+      padding-left: 20px;
+      color: $black;
+    }
+  }
+
+  .delBtn {
+    background-color: transparent;
+    color: red;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
